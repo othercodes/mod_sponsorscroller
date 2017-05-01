@@ -2,7 +2,7 @@
 
 /**
  * @version   mod_basicmodule v1.0
- * @author    Sayga Informatica http://saygainformatica.com/
+ * @author    usantisteban <usantisteban@othercode.es>
  * @copyright Copyright (C) 2008 - 2015 Sayga Informatica
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
@@ -18,7 +18,7 @@
 
                 <div class="ss-sponsor <?php echo ($count == 1) ? "first-" . $instanceClass : false; ?>">
                     <a href="<?php echo $sponsor->url; ?>" target="_blank" rel="nofollow">
-                        <img src="<?php echo $sponsor->banner ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
+                        <img src="<?php echo $sponsor->banner ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="<?php echo $sponsor->name; ?>">
                     </a>
                 </div>
 

@@ -1,35 +1,27 @@
-<?php defined( '_JEXEC' ) or die( 'Restricted access' );
+<?php defined('_JEXEC') or die('Restricted access');
 
 /**
  * @version   mod_basicmodule v1.0
- * @author    Sayga Informatica http://saygainformatica.com/
+ * @author    usantisteban <usantisteban@othercode.es>
  * @copyright Copyright (C) 2008 - 2015 Sayga Informatica
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @since 2.0
  */
-
-class modSponsorScrollerHelper {
-
-    public static function getSponsors($params) {
-
-        $option = array();
-
-        $option['driver']   = $params->get('dbtype');
-        $option['host']     = $params->get('host');
-        $option['user']     = $params->get('user');
-        $option['password'] = $params->get('password');
-        $option['database'] = $params->get('database');
-
+class modSponsorScrollerHelper
+{
+    public static function getSponsors($params)
+    {
         $type = $params->get('type');
         $fido = $params->get('fido');
 
-        $db = JDatabaseDriver::getInstance($option);
+        $db = JFactory::getDbo();
         $query = $db->getQuery(true);
 
-        $query->select('alias, nombre, url, banner'.$type.' AS banner');
-        $query->from($db->quoteName('patrocinadores'));
-        $query->where($db->quoteName('activeb'.$type) . ' = 1');
+        $query->select('alias, name, url, banner' . $type . ' AS banner');
+        $query->from($db->quoteName('#__sponsors_profile'));
+        $query->where($db->quoteName('state') . '= 1');
 
-        if($fido == 1){
+        if ($fido == 1) {
             $query->where($db->quoteName('fido') . ' = 1');
         }
 
@@ -39,7 +31,5 @@ class modSponsorScrollerHelper {
         $result = $db->loadObjectList();
 
         return $result;
-
     }
 }
-?>

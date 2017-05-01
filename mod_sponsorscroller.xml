@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
     <name>Sponsor Scroller</name>
-    <author>Sayga Informatica</author>
+    <author>Unay Santisteban</author>
     <creationDate>Mayo 2015</creationDate>
-    <copyright>Copyright (C) 2014 Sayga Informatica. All rights reserved.</copyright>
+    <copyright>Copyright (C) 2014 otherCode. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <authorEmail>webmaster@saygainformatica.com</authorEmail>
-    <authorUrl>www.saygainformatica.com</authorUrl>
-    <version>1.0.1</version>
+    <authorEmail>usantisteban@othercode.es</authorEmail>
+    <authorUrl>othercode.es</authorUrl>
+    <version>2.0.0</version>
     <description>MOD_SPONSORSCROLLER_DESC</description>
     <files>
         <filename>mod_sponsorscroller.xml</filename>
@@ -24,36 +24,28 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="dbtype" type="databaseconnection" label="MOD_SPONSORSCROLLER_DATABASE_TYPE_LABEL" description="MOD_SPONSORSCROLLER_DATABASE_TYPE_DESC" supported="mysql,mysqli" filter="string" />
-                <field name="host" type="text" default="" label="MOD_SPONSORSCROLLER_HOST_LABEL" description="MOD_SPONSORSCROLLER_HOST_DESC" />
-                <field name="user" type="text" default="" label="MOD_SPONSORSCROLLER_USER_LABEL" description="MOD_SPONSORSCROLLER_USER_DESC" />
-                <field name="password" type="password" default="" label="MOD_SPONSORSCROLLER_PASSWORD_LABEL" description="MOD_SPONSORSCROLLER_PASSWORD_DESC" />
-                <field name="database" type="text" default="" label="MOD_SPONSORSCROLLER_DATABASE_LABEL" description="MOD_SPONSORSCROLLER_DATABASE_DESC" />
                 <field name="type" type="list" default="1" label="MOD_SPONSORSCROLLER_BANNER_TYPE_LABEL" description="MOD_SPONSORSCROLLER_BANNER_TYPE_DESC">
-                    <option value="1">MOD_SPONSORSCROLLER_BANNER_TYPE_150X80</option>
-                    <option value="2">MOD_SPONSORSCROLLER_BANNER_TYPE_468X60</option>
+                    <option value="1">MOD_SPONSORSCROLLER_BANNER_TYPE_468X60</option>
+                    <option value="2">MOD_SPONSORSCROLLER_BANNER_TYPE_150X80</option>
                 </field>
                 <field name="fido" type="list" default="1" label="FIDO" description="FIDO">
-                    <option value="1">SI</option>
-                    <option value="0">NO</option>
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
                 </field>
             </fieldset>
 
             <fieldset name="advanced">
-                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
-                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
                 <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
                     <option value="1">JGLOBAL_USE_GLOBAL</option>
                     <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
                 </field>
-                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
                 <field name="cachemode" type="hidden" default="static">
                     <option value="static"></option>
                 </field>
             </fieldset>
         </fields>
     </config>
-    <updateservers>
-        <server name="Sayga Informatica Extension Directory" priority="1" type="collection">http://saygainformatica.com/updates/index.xml</server>
-    </updateservers>
 </extension>

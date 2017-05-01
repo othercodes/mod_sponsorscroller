@@ -1,12 +1,13 @@
-<?php defined('_JEXEC') or die('Restricted access');
+<?php
+
+defined('_JEXEC') or die('Restricted access');
 
 /**
- * @version   mod_basicmodule v1.0
- * @author    Sayga Informatica http://saygainformatica.com/
+ * @version   mod_basicmodule v2.0
+ * @author    usantisteban <usantisteban@othercode.es>
  * @copyright Copyright (C) 2008 - 2015 Sayga Informatica
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
-
 require_once(dirname(__FILE__) . '/helper.php');
 
 $count = 0;
@@ -15,12 +16,15 @@ $sponsors = modSponsorScrollerHelper::getSponsors($params);
 $instanceClass = "ss-inst-" . count($sponsors) . "-" . $params->get('type');
 $time = count($sponsors) * 2;
 
-if ($params->get('type') == 1) {
-    $width = 150;
-    $height = 80;
-} else {
-    $width = 468;
-    $height = 60;
+switch ($params->get('type')) {
+    case 1:
+        $width = 468;
+        $height = 60;
+        break;
+    case 2:
+        $width = 150;
+        $height = 80;
+        break;
 }
 
 $absoluteWidth = count($sponsors) * ($width + 10);
